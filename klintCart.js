@@ -25,7 +25,7 @@ const cart = {
     rl.question("what do you want to do? ", cart.standBy);
   },
   removeFromCart(input) {
-    cart.cartArry.pop(input);
+    cart.cartArry.splice(cart.cartArry.indexOf(input), 1);
     rl.question("what do you want to do? ", cart.standBy);
   },
   standBy: function (input) {
@@ -51,6 +51,11 @@ const cart = {
 
     if (input === "exit") {
       rl.close();
+    } else {
+      rl.question(
+        "please input add, remove, showcase or length: ",
+        cart.standBy
+      );
     }
   },
 };
